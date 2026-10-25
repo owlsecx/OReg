@@ -18,13 +18,18 @@
 
 ## 📌 Overview
 
-Audit cron, systemd, init.d, rc.local, SSH,
+OReg is a Linux persistence forensic tool. It audits common persistence mechanisms — cron, systemd, init.d, rc.local, SSH, shell profiles, kernel modules, SUID/SGID, at jobs, XDG autostart, LD_PRELOAD, passwd, sudoers, capabilities and writable PATH entries — and reports findings. It is intended for authorised security testing and typically requires root.
 
 ---
 
 ## ✨ Features
 
-- Persistence forensic tool — cron, systemd, SUID, timers, baseline
+- Audits cron, systemd, init.d and rc.local persistence
+- Reviews SSH, shell profiles, XDG autostart and LD_PRELOAD
+- Inspects kernel modules, SUID/SGID binaries, capabilities and writable PATH entries
+- Checks passwd, sudoers and at jobs
+- Saves TXT/JSON/CSV reports and an optional HTML report
+- Baseline capture and syslog forwarding for monitoring
 
 ---
 
@@ -38,7 +43,10 @@ Audit cron, systemd, init.d, rc.local, SSH,
 ## 🚀 Usage
 
 ```bash
-./OReg
+./OReg --full
+./OReg --audit cron
+./OReg --full --save-baseline --html
+./OReg --help
 ```
 
 ---
